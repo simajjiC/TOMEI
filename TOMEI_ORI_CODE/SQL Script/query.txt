@@ -1,0 +1,12 @@
+SELECT     T_Certificate.CertificateNo, T_ProductSeries.SeriesDescription, T_Certificate.CreatedDate, T_Clarity.value, T_Colour.value AS Expr1, T_Fluorescence.value AS Expr2, 
+                      T_Girdle.value AS Expr3, T_Polish.value AS Expr4, T_Symmetry.value AS Expr5, T_Stone.Measurement_1, T_Stone.Measurement_2, T_Stone.Measurement_3, 
+                      T_Stone.Weight, T_Stone.Size, T_Stone.Depth, T_Certificate.PrintCount
+FROM         T_Certificate INNER JOIN
+                      T_Stone ON T_Certificate.CertificateNo = T_Stone.CertificateNo INNER JOIN
+                      T_ProductSeries ON T_Certificate.ProductSeries = T_ProductSeries.id INNER JOIN
+                      T_Clarity ON T_Stone.Clarity = T_Clarity.id INNER JOIN
+                      T_Colour ON T_Stone.Colour = T_Colour.id INNER JOIN
+                      T_Fluorescence ON T_Stone.Fluorescence = T_Fluorescence.id INNER JOIN
+                      T_Girdle ON T_Stone.Girdle = T_Girdle.id INNER JOIN
+                      T_Polish ON T_Stone.Polish = T_Polish.id INNER JOIN
+                      T_Symmetry ON T_Stone.Symmetry = T_Symmetry.id

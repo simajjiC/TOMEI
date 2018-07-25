@@ -1,0 +1,234 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="Pages_Standard" Codebehind="Standard.master.cs" %>
+<%@ Register Assembly="DevExpress.Web.v9.1" Namespace="DevExpress.Web.ASPxPopupControl"
+    TagPrefix="dxpc" %>
+<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxNavBar" tagprefix="dxnb" %>
+<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxMenu" tagprefix="dxm" %>
+<%@ Register assembly="DevExpress.Web.ASPxEditors.v9.1" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script type="text/javascript" language="javascript">
+        function __doPostBack() 
+        {
+ 	        var theform = document.myForm;
+  	        theform.submit();
+	    }
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />    
+    <link href="../stylesheets/common.css" rel="stylesheet" type="text/css" />
+    <title>Certification Management System</title>
+    <style type="text/css">
+
+.dxeBase
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+        .style2
+        {
+            width: 73%;
+        }
+        .style3
+        {
+            width: 100%;
+        }
+        .style4
+        {
+            height: 39px;
+        }
+        </style>
+</head>
+<body>
+    <form id="formMain" runat="server">
+	<!-- Start Header -->
+	<div id="header">
+	</div>
+      <!-- banner message and building background -->
+	<!-- Start Main Content -->
+    <div id="main" class="container">
+     <div>
+     
+         <table align="center" cellpadding="0" cellspacing="0" class="style3">
+             <tr>
+                 <td bgcolor="#8e226a">
+                    &nbsp;
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                    <dxm:ASPxMenu ID="Menu" runat="server" Width="100%" 
+                         HorizontalAlign="Center">
+                        <Items>
+                            <dxm:MenuItem Text="Certificate" Name="mnuCertificate">
+                                <Items>
+                                    <dxm:MenuItem Name="mnuCreate" NavigateUrl="~/Pages/Certificate/Create.aspx" 
+                                        Text="Create">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuPrint" NavigateUrl="~/Pages/Certificate/Print.aspx" 
+                                        Text="Print">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuVoid" NavigateUrl="~/Pages/Certificate/Void.aspx" 
+                                        Text="Void">
+                                    </dxm:MenuItem>
+                                </Items>
+                            </dxm:MenuItem>
+                            <dxm:MenuItem Text="Product" Name="mnuProduct">
+                                <Items>
+                                    <dxm:MenuItem Name="mnuCategory" 
+                                        NavigateUrl="~/Pages/Product/ProductCategory.aspx" Text="Product Category">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuSubCategory"
+                                        NavigateUrl="~/Pages/Product/ProductSubCategory.aspx" 
+                                        Text="Product Sub Category">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuSeries" NavigateUrl="~/Pages/Product/ProductSeries.aspx" 
+                                        Text="Product Series">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuSeriesImage" 
+                                        NavigateUrl="~/Pages/Product/ProductSeriesImage.aspx" 
+                                        Text="Product Series Image">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuProductGroup" 
+                                        NavigateUrl="~/Pages/Product/ProductGroup.aspx" 
+                                        Text="Product Group">
+                                    </dxm:MenuItem>
+                                </Items>
+                            </dxm:MenuItem>
+                            <dxm:MenuItem Text="Stone" Name="mnuStone">
+                                <Items>
+                                    <dxm:MenuItem NavigateUrl="~/Pages/Stone/DataUpload.aspx" Text="Upload Data" Name="mnuUpload">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Enquiry" Name="mnuSearch" 
+                                        NavigateUrl="~/Pages/Stone/Search.aspx">
+                                    </dxm:MenuItem>
+                                </Items>
+                            </dxm:MenuItem>
+                            <dxm:MenuItem Text="Attribute Maintenance" Name="mnuAttribute">
+                                <Items>
+                                    <dxm:MenuItem Text="Clarity" NavigateUrl="~/Pages/Attributes/Clarity.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Colour" NavigateUrl="~/Pages/Attributes/Colour.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Flourescence" NavigateUrl="~/Pages/Attributes/Fluorescence.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Girdle" NavigateUrl="~/Pages/Attributes/Girdle.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Polish" NavigateUrl="~/Pages/Attributes/Polish.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="Symmetry" NavigateUrl="~/Pages/Attributes/Symmetry.aspx">
+                                    </dxm:MenuItem>
+                                </Items>
+                            </dxm:MenuItem>
+                            <dxm:MenuItem Text="Administration" Name="mnuAdministration">
+                                <Items>
+                                    <dxm:MenuItem Text="User Management" NavigateUrl="~/Pages/Administration/Users.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Text="User Activity" NavigateUrl="~/Pages/Administration/Action.aspx">
+                                    </dxm:MenuItem>
+                                    <dxm:MenuItem Name="mnuImageDefault" 
+                                        NavigateUrl="~/Pages/Administration/ImageDefault.aspx" Text="Default Image">
+                                    </dxm:MenuItem>
+                                </Items>
+                            </dxm:MenuItem>
+                        </Items>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </dxm:ASPxMenu>
+                 </td>
+             </tr>
+         </table>
+      </div>
+      <div>
+            <asp:Panel ID="pnlLogout" runat="server" BorderStyle="None" BorderWidth="0px" 
+                HorizontalAlign="Right">
+                <table style="width:100%;">
+                <tr>
+                    <td class="style2" rowspan="2" style="text-align: left">
+                        <dxe:ASPxLabel ID="lblPageTitle" runat="server" Font-Bold="False" 
+                            Font-Names="Arial" Font-Size="Large" ForeColor="#009999" 
+                            Text="">
+                        </dxe:ASPxLabel>
+                    </td>
+                    <td align="right">
+                        <dxe:ASPxLabel ID="lblName" runat="server" Font-Names="Arial" Font-Size="Small" 
+                            Font-Bold="True" Text=""></dxe:ASPxLabel>
+                        </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                     &nbsp;<asp:LinkButton ID="btnLogout" runat="server" 
+                        Width="70px" onclick="btnLogout_Click">Logout</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>        
+            </asp:Panel>
+            
+          <dxm:ASPxMenu id="ASPxMenu2" SkinID="None" runat="server" EnableDefaultAppearance="False" ItemLinkMode="TextOnly" Font-Names="Tahoma" Font-Size="11px" Font-Underline="False" ForeColor="#162436" SeparatorColor="#5386CB" SeparatorHeight="10px" Visible="False">   
+                <Items> 
+                    <dxm:MenuItem NavigateUrl="javascript:void(0)" Name="home" Text="Home"></dxm:MenuItem>
+                    <dxm:MenuItem NavigateUrl="javascript:void(0)" Name="products" Text="&gt; Products"></dxm:MenuItem>
+                    <dxm:MenuItem NavigateUrl="javascript:void(0)" Name="downloads" Text="&gt; Downloads"></dxm:MenuItem>
+                    <dxm:MenuItem NavigateUrl="javascript:void(0)" Name="support" Text="&gt; Support"></dxm:MenuItem>
+                    <dxm:MenuItem NavigateUrl="javascript:void(0)" Name="order" Text="&gt; Order"></dxm:MenuItem>
+                </Items>
+                <Paddings Padding="0px" />
+                <SeparatorPaddings PaddingLeft="14px" PaddingRight="14px" PaddingTop="1px" />
+                <LinkStyle>
+                    <HoverFont Underline="True" />
+                </LinkStyle>
+          </dxm:ASPxMenu>
+          
+            <asp:Panel ID="pnlAction" runat="server" BorderStyle="None" BorderWidth="0px" 
+               Visible="False">
+                <table width="100%">
+                <tr bgcolor="#F0F0F0">
+                    <td align="left" width="100px" class="style4">
+                        <dxm:ASPxMenu ID="ActionMenu" runat="server" 
+                            Width="80px"  Height="16px" EnableTheming="True">
+                            <Items>
+                                <dxm:MenuItem Text="Action">
+                                    <Image Url="~/images/action.gif" />
+                                </dxm:MenuItem>
+                            </Items>
+                        </dxm:ASPxMenu>
+                    </td>
+                    <td align="left" class="style4">
+                        <dxe:ASPxLabel ID="lblStatus" runat="server" Font-Bold="False" 
+                            Font-Names="Arial" Font-Size="Large" ForeColor="Green">
+                        </dxe:ASPxLabel>
+                    </td>
+                    <td width="50px" class="style4">
+                    </td>
+                </tr>
+                    <tr>
+                        <td align="left">
+                            &nbsp;</td>
+                        <td align="left">
+                            <asp:BulletedList ID="MsgList" runat="server" BulletStyle="Disc" 
+                                Font-Bold="True" Font-Names="Arial" Font-Size="Medium" ForeColor="Red" 
+                                Width="100%">
+                            </asp:BulletedList>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+            </table>        
+            </asp:Panel>
+      </div>      
+          <asp:contentplaceholder id="ContentPlaceHolderM" runat="server"> 
+          </asp:contentplaceholder>
+          <br /><br />
+    </div>
+<!-- Start Bottom Information -->
+<div id="bottominfo">
+         <table align="center" cellpadding="0" cellspacing="0" class="style3">
+             <tr>
+                 <td bgcolor="#8e226a">
+                    <img src="../images/spacer.gif" width="1" height="3" alt="spacer"/>
+                 </td>
+             </tr>
+        </table>
+</div>
+<!-- Start Footer -->
+        </form>
+    </body>
+</html>

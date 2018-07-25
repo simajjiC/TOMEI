@@ -1,0 +1,1 @@
+osql   /U sa /P p@ssword123 /d Tomei /S YIXING /Q "S_CreateTXT"
